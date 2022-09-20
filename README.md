@@ -1,6 +1,23 @@
 # IBM-Project-36886-1660298413
 Customer Care Registry
 
+Team Members:
+
+  Manikandan S
+   
+  Vasanth S
+  
+  Arulselvam K
+  
+  Vignesh A
+  
+  Sakthimakesh A
+
+Software Required:
+Python, Flask , Docker
+
+System Required:
+8GB RAM,Intel Core i3,OS-Windows/Linux/MAC ,Laptop or Desktop
 
 This Application has been developed to help the customer in processing their complaints.  The customers can raise the ticket with a detailed description of the issue.  An Agent will be assigned to the Customer to solve the problem.  Whenever the agent is assigned to a customer they will be notified with an email alert.  Customers can view the status of the ticket till the service is provided.
 
