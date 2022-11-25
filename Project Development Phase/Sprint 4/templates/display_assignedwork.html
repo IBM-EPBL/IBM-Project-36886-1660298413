@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+		Customer care Registry
+	</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      }
+      h1 {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #1c87c9;
+      }
+      p {
+      margin: 0 0 5px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 75vh;
+      
+      }
+      form {
+      padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5; 
+      background: #f5f5f5; 
+      }
+      .fas {
+      margin: 25px 10px 0;
+      font-size: 72px;
+      color: #fff;
+      }
+      .fa-envelope {
+      transform: rotate(-20deg);
+      }
+      .fa-at , .fa-mail-bulk{
+      transform: rotate(10deg);
+      }
+      input, textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      }
+      input::placeholder {
+      color: #666;
+      }
+      button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #1c87c9; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+        background: #2371a0;
+      }    
+      @media (min-width: 568px) {
+      .main-block {
+      flex-direction: row;
+      }
+      .left-part, form {
+      width: 50%;
+      }
+      .fa-envelope {
+      margin-top: 0;
+      margin-left: 20%;
+      }
+      .fa-at {
+      margin-top: -10%;
+      margin-left: 65%;
+      }
+      .fa-mail-bulk {
+      margin-top: 2%;
+      margin-left: 28%;
+      }
+      table {
+
+        padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5; 
+      background: #f5f5f5; 
+}
+
+
+td, th {
+
+border: 1px solid #88a0f9;
+
+text-align: left;
+
+padding: 8px;
+
+}
+
+
+tr:nth-child(even) {
+
+background-color: #dddddd;
+
+}
+      
+      /* table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 45px;
+  text-align: left;
+}
+ th{
+  text-align: centre;
+  color: #f5f5f5;
+}
+td{
+	text-align:centre;
+    color: #f5f5f5;
+} */
+      }
+      body{
+        background: -webkit-linear-gradient(left, #a445b2, #42c0fa);
+		}
+       /* nav{
+    flex: 1;
+    text-align: right;
+    }
+    nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: xx-large;
+} */
+ul{
+  
+  margin-left: 800px;
+  /* list-style-type: none; */
+  margin-top: 25px;
+  color: red;
+}
+ul li{
+  box-shadow: none;
+  padding: 8px;
+  border: none;
+  display: inline-block;
+  text-align: right;
+  color: rgb(242, 240, 240);
+  
+}
+ul li a{
+  border-radius: 40px;
+  text-decoration: none;
+  color: rgb(255, 255, 252);
+  font-size: large;
+  font-weight: bold;
+  padding: 15px 20px;
+  border: 1px solid #fff;
+}
+ul li a:hover{
+  background-color: rgb(242, 242, 242);
+  color: #000;
+}
+    </style>
+
+  </head>
+  <header>
+    <div class="main">
+       <ul>
+          <li><a href="logi">LOGIN/SIGNUP</a></li>
+          <li><a href="about">ABOUTUS</a></li>
+          <li><a href="contact">CONTACTUS</a></li>
+       </ul>
+    </div>
+   </header>
+<br /><br />
+<h1 align="center">
+    <font face="Lato" color="white" size="7">
+        CUSTOMER CARE REGISTRY
+    </font>
+</h1>
+<h3 align="center">
+    <font face="Lato" color="#000" size="5">
+        <strong>“DEAR CUSTOMER PLEASE UPDATE YOUR STATUS”</strong>
+    </font>
+</h3>
+<br />
+
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+      </div>
+      <div class="table">
+      <table>
+        <thead>
+            <tr>
+                                    <th>COMP_ID</th>
+                                    <th>CUSTOMERNAME</th>
+                                    <th>ITEM</th>
+                                    <th>AGENTNAME</th>
+                                    <th>COMPLAINT</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+              <td>{{data.COMP_ID}}</td>
+              <td>{{data.CUSTOMERNAME}}</td>
+              <td>{{data.ITEMNAME}}</td>
+              <td>{{data.AGENTNAME}}</td>
+              <td>{{data.COMPLAINT}}</td>
+            </tr>
+         
+        </tbody>
+    </table>
+</div>
+      <form action="{{ url_for('status') }}" method = "POST">
+        <h1>UPDATE STATUS</h1>
+        <div class="info">
+          <input type="text" name="comp_id" placeholder="comp_id">
+          <input type="text" name="status" placeholder="Status">
+        </div>
+        <button type="submit" href="/">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
